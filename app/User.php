@@ -7,11 +7,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    /**
+     * ROLE_ADMIN constant.
+     */
+    const ROLE_ADMIN = 'admin';
+
     use Notifiable;
 
     /**
      * The attributes that are mass assignable.
-     *  
+     *
      * @var array
      */
     protected $fillable = [
