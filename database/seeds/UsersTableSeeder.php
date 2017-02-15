@@ -17,5 +17,12 @@ class UsersTableSeeder extends Seeder
                 'email' => 'admin@user.com',
                 'name' => 'marcelo'
             ]);
+
+
+        factory(\CodeFin\User::class, 1)
+            ->create([
+                'email' => 'client@user.com',
+                'name' => 'Client da Silva'
+            ]);
     }
 }
