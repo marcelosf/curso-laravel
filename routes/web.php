@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Gate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,17 @@
 */
 
 Route::get('/', function () {
+
+    if(Gate::allows('access-admin')){
+
+        return "Usuário com permissão de admin";
+
+    } else {
+
+        return "Usuário sem permissão de admin";
+
+    }
+
     return view('welcome');
 });
 
