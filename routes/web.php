@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Gate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,21 +11,29 @@ use Illuminate\Support\Facades\Gate;
 |
 */
 
-Route::get('/', function () {
+Route::get('/user', function (){
 
-    if(Gate::allows('access-admin')){
+    \Illuminate\Support\Facades\Auth::loginUsingId(2);
 
-        return "Usuário com permissão de admin";
-
-    } else {
-
-        return "Usuário sem permissão de admin";
-
-    }
-
-    return view('welcome');
 });
 
-Auth::routes();
+Route::get('/', function () {
 
-Route::get('/home', 'HomeController@index');
+    return view('welcome');
+})->middleware('can:access-admin');
+
+
+Route::get('/home', function (){
+
+    return redirect()->route('admin.home');
+
+});
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'can:access-admin', 'as' => 'admin.'], function (){
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});
