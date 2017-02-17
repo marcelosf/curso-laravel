@@ -20,7 +20,7 @@ Route::get('/user', function (){
 Route::get('/', function () {
 
     return view('welcome');
-})->middleware('can:access-admin');
+});
 
 
 Route::get('/home', function (){
@@ -30,10 +30,15 @@ Route::get('/home', function (){
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'can:access-admin', 'as' => 'admin.'], function (){
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
 
     Auth::routes();
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['middleware' => 'can:access-admin'], function (){
+
+        Route::get('/home', 'HomeController@index')->name('home');
+
+    });
+
 
 });
