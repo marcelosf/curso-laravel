@@ -15,7 +15,13 @@ Elixir.webpack.mergeConfig(webpackDevConfig);
 
 gulp.task('webpack-dev-server', () => {
     let config = Elixir.webpack.config;
+    let inlineHot = [
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://192.168.10.10:8000'
+    ];
+    config.entry.admin = [config.entry.admin].concat(inlineHot);
     new WebpackDevServer(webpack(config), {
+        hot: true,
         proxy: {
           '*': 'http://192.168.10.10:8000'
         },
