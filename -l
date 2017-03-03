@@ -1,0 +1,119 @@
+[33mcommit f67d78d3e300b5299e5c453d3deb7a4fe16e8984[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 24 13:56:38 2017 +0000
+
+    webpack-merge
+
+[33mcommit 448c30de456862fc630a4ca37572f2c22fea3317[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 24 13:44:05 2017 +0000
+
+    Configurando inline e hot do webpack-dev-server
+
+[33mcommit 4ac447f7b7c17b7b9785c7bc1a39ae3a5b2a903f[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 24 13:17:13 2017 +0000
+
+    Testando o webpack-dev-server
+
+[33mcommit 1de6676fa572f36f7302a63d00f2eb9c3fd29dd6[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 22 13:22:22 2017 +0000
+
+    Configuração do webpack-dev-server
+
+[33mcommit 88c8855ce5dfcb7addd50361c12c4b3b3149b085[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 22 13:03:17 2017 +0000
+
+    Configuração do webpack em gulpfile
+
+[33mcommit ffa86901f4be9e26874b240308d9cf17cbfc9c78[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 22 12:52:25 2017 +0000
+
+    Criando webpack.dev.config.js
+
+[33mcommit 339baa94509b1f1166ef2c1ea26f33b1cbe29384[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 22 12:47:44 2017 +0000
+
+    webpack.config.js
+
+[33mcommit f0c691fcdd8aedd316a629807b8acdb81ea0dcdc[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 22 12:36:37 2017 +0000
+
+    Criando webpack.dev.config.js
+
+[33mcommit bbece68a18c189013233045d072f2433b86db92e[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Mon Feb 20 12:58:44 2017 +0000
+
+    Configurando Browser Sync
+
+[33mcommit 322824a54c5aef09fd739b52a6406242f100d14d[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Mon Feb 20 12:46:41 2017 +0000
+
+    Compilando sass do admin
+
+[33mcommit 3a15b60506bbc6894baa42d1f721e7e31f18e107[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Mon Feb 20 12:21:47 2017 +0000
+
+    Assets para Admin
+
+[33mcommit 4eec3680904f11d4ec26079db17b277a7b570960[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 17 13:16:42 2017 +0000
+
+    Instalando dependências do package.json
+
+[33mcommit ed8c81925223c821a027ee55d4cc6aa3560bd358[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 17 12:54:05 2017 +0000
+
+    Prefixo admin para rotas de autenticação
+
+[33mcommit a932f78b418dfb1f50b8bf618f6c16090c595164[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Fri Feb 17 12:25:34 2017 +0000
+
+    Protegendo rotas admin
+
+[33mcommit 3d1a2ee0efb2a9a1a2115de2e508f9d04d753980[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 15 12:50:28 2017 +0000
+
+    Habilidade para verificar admins
+
+[33mcommit 5650e4cdf1aadb20dd281fe31621c309d9cd7457[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Wed Feb 15 12:29:37 2017 +0000
+
+    Criando login e logout para admins
+
+[33mcommit c22d4e232e35ca07f8f71624e56c15292dbf0dae[m
+Author: marcelo <schneider.fei@gmail.com>
+Date:   Tue Feb 14 12:54:58 2017 +0000
+
+    Criando autenticação
+
+[33mcommit 240764d478a5d977517e89d83b8c08859b420d80[m
+Author: vagrant <vagrant@code-financeiro>
+Date:   Tue Feb 14 12:45:48 2017 +0000
+
+    Criando usuários administrativos
+
+[33mcommit 2abe10ab3b2b3b1a1b793608824dfdbcc45c5dc4[m
+Author: vagrant <vagrant@code-financeiro>
+Date:   Tue Feb 14 12:19:17 2017 +0000
+
+    Alterando namespace da aplicação
+
+[33mcommit b33349b1bb09b915c19a96386006383f5c730a29[m
+Author: vagrant <vagrant@code-financeiro>
+Date:   Tue Feb 14 12:08:04 2017 +0000
+
+    Criando a aplicação laravel
