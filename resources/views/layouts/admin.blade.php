@@ -22,31 +22,48 @@
 </head>
 <body>
     <div id="app">
-        @if(Auth::check())
-            <?php $menuConfig = [
-                'name' => Auth::user()->name,
-                'menus' => [
-                    ['name' => 'Contas a pagar', 'url' => '/teste', 'dropdownId' => 'teste'],
-                    [ 'name' => 'Contas a receber', 'url' => '/teste1']
-                ],
-                'menusDropDown' => [
-                    [
-                        'id' => 'teste',
-                        'items' => [
-                            ['name' => "Listar contas", 'url' => '/listar'],
-                            ['name' => "Criar contas", 'url' => '/criar']
+        <header>
+            @if(Auth::check())
+                <?php $menuConfig = [
+                    'name' => Auth::user()->name,
+                    'menus' => [
+                        ['name' => 'Contas a pagar', 'url' => '/teste', 'dropdownId' => 'teste'],
+                        [ 'name' => 'Contas a receber', 'url' => '/teste1']
+                    ],
+                    'menusDropDown' => [
+                        [
+                            'id' => 'teste',
+                            'items' => [
+                                ['name' => "Listar contas", 'url' => '/listar'],
+                                ['name' => "Criar contas", 'url' => '/criar']
+                            ]
                         ]
-                    ]
-                ],
-                'urlLogout' => env('URL_ADMIN_LOGOUT'),
-                'csrfToken' => csrf_token()
-            ];
-            ?>
-            <admin-menu :config="{{ json_encode($menuConfig) }}"></admin-menu>
-        @endif
+                    ],
+                    'urlLogout' => env('URL_ADMIN_LOGOUT'),
+                    'csrfToken' => csrf_token()
+                ];
+                ?>
+                <admin-menu :config="{{ json_encode($menuConfig) }}"></admin-menu>
+            @endif
+        </header>
+
+        <main>
+
+            @yield('content')
+
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="footer-copyright">
+                <div class="container">
+                    @ {{ date('Y') }} <a href="http://code.education" class="grey-text text-lighten-4">Code Education</a>
+                </div>
+            </div>
+
+        </footer>
 
 
-        @yield('content')
     </div>
 
     <!-- Scripts -->
