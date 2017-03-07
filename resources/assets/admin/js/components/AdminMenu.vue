@@ -5,10 +5,23 @@
             <a :href="item.url">{{ item.name }}</a>
         </li>
     </ul>
+
+    <ul id="dropdown-logout" class="dropdown-content">
+        <li>
+            <a :href="config.urllogout" @click.prevent="goToLogout()">
+                Sair
+            </a>
+
+            <form id="logout-form" :action="config.urlLogout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" :value="config.csrfToken">
+            </form>
+        </li>
+    </ul>
+
     <div class="navbar-fixed">
         <nav >
             <div class="nav-wrapper container">
-                <a href="#" class="brand-logo right">Code Contas</a>
+                <a href="#" class="brand-logo left">Code Financeiro Admin</a>
 
                 <a href="#" data-activates="nav-mobile" class="button-collapse">
                     <i class="material-icons">menu</i>
@@ -20,12 +33,17 @@
                     </li>
                 </ul>
 
-                <ul class="left hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down">
                     <li v-for="o in config.menus">
                         <a v-if ="o.dropdownId" class="dropdown-button" href="#" :data-activates="o.dropdownId">
                             {{ o.name }} <i class="material-icons right">arrow_drop_down</i>
                         </a>
                         <a v-else :href="o.url">{{ o.name }}</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-button" href="#" data-activates="dropdown-logout">
+                            {{ config.name }} <i class="material-icons right">arrow_drop_down</i>
+                        </a>
                     </li>
                 </ul>
 
@@ -43,6 +61,16 @@
             console.log('document ready');
 
             $('.dropdown-button').dropdown();
+
+        },
+
+        methods: {
+
+            goToLogout() {
+
+                $('#logout-form').submit();
+
+            }
 
         },
 
