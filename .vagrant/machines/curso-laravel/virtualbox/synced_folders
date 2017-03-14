@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/curso-laravel":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/curso-laravel","hostpath":"/home/schneider/Documents/cursos/curso-laravel","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/schneider/Documents/cursos/curso-laravel","disabled":false,"__vagrantfile":true}}}
