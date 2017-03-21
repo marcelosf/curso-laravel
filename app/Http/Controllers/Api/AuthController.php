@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use CodeFin\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,14 @@ class AuthController extends Controller
 
         $this->validateLogin($request);
 
+        if($this->hasTooManyLoginAttempts($request)) {
+
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+
+        }
+
         $credentials = $this->credentials($request);
 
         if($token = Auth::guard('api')->attempt($credentials)){
@@ -27,10 +36,16 @@ class AuthController extends Controller
 
         }
 
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
+
     }
 
     protected function sendLoginResponse(Request $request, $token)
     {
+
+        $this->clearLoginAttempts($request);
 
         return response()->json([
 
@@ -39,6 +54,34 @@ class AuthController extends Controller
         ]);
 
     }
+
+
+    protected function sendLockoutResponse(Request $request)
+    {
+
+        $seconds = $this->limiter()->availableIn($this->throttleKey($request));
+
+        $message = Lang::get('auth.throttle', ['seconds' => $seconds]);
+
+        return response()->json([
+
+            'message' => $message
+
+        ], 403);
+
+    }
+
+    protected function sendFailedLoginResponse(Request $request)
+    {
+
+        return response()->json([
+
+            "message" => Lang::get('auth.failed')
+
+        ], 401);
+
+    }
+
 
     /**
      * Log the user out of the application.
@@ -56,6 +99,7 @@ class AuthController extends Controller
 
         return redirect(env('URL_ADMIN_LOGIN'));
     }
+
 
 
 }
