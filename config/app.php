@@ -176,6 +176,7 @@ return [
         // CodeFin\Providers\BroadcastServiceProvider::class,
         CodeFin\Providers\EventServiceProvider::class,
         CodeFin\Providers\RouteServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class
 
     ],
 

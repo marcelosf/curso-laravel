@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/code-financeiro":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/code-financeiro","hostpath":"/home/schneider/Documentos/cursos/laravel/code-financeiro","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/schneider/Documentos/cursos/laravel/code-financeiro","disabled":false,"__vagrantfile":true}}}
