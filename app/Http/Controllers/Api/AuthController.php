@@ -91,13 +91,10 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        $this->guard()->logout();
 
-        $request->session()->flush();
+        Auth::guard('api')->logout();
 
-        $request->session()->regenerate();
-
-        return redirect(env('URL_ADMIN_LOGIN'));
+        return response()->json([], 204);
     }
 
 

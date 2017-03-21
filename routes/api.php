@@ -17,4 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('access_token', 'Api\AuthController@accessToken');
+Route::post('/access_token', 'Api\AuthController@accessToken');
+Route::post('logout', 'Api\AuthController@logout')->middleware('auth:api');
+
+Route::get('hello-world', function(Request $request){
+
+    return response()->json(['message' => 'Hello world']);
+
+})->middleware('auth:api');
