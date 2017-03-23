@@ -87,7 +87,7 @@ class AuthController extends Controller
 
         $token = Auth::guard('api')->refresh();
 
-        return $this->sendFailedLoginResponse($request, $token);
+        return $this->sendLoginResponse($request, $token);
 
     }
 

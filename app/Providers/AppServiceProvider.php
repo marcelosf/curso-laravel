@@ -32,8 +32,11 @@ class AppServiceProvider extends ServiceProvider
                 $app['tymon.jwt.payload.factory']
             );
 
-            return $instance->setBlacklistEnabled((bool) config('jwt.blacklist_enabled'))
-                ->setPersistentClaims(config('jwt.persistent_claims'));
+            $instance->setBlacklistEnabled((bool) config('jwt.blacklist_enabled'));
+            //$instance->setPersistentClaims(config('jwt.persistent_claims'));
+
+
+            return $instance;
         });
 
     }
