@@ -1,3 +1,5 @@
+import LoginComponent from './components/Login.vue';
+
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean
@@ -24,6 +26,17 @@ require('materialize-css');
 Vue.component('app', require('./components/App.vue'));
 Vue.component('admin-menu', require('./components/AdminMenu.vue'));
 
+let VueRouter = require('vue-router');
+const router = new VueRouter();
+
+router.map({
+
+    '/login': {
+        name: 'auth.login',
+        component: LoginComponent
+    }
+
+});
 
 const app = new Vue({
 
