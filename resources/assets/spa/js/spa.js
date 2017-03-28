@@ -1,4 +1,5 @@
 import LoginComponent from './components/Login.vue';
+import AppComponent from './components/App.vue';
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -38,11 +39,13 @@ router.map({
 
 });
 
-const app = new Vue({
+router.start({
 
-    el: 'body'
+    components: {
+        'app': AppComponent
+    }
 
-});
+}, 'body');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
