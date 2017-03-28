@@ -1,5 +1,8 @@
-window.Vue = require('vue');
 require('materialize-css');
+window.Vue = require('vue');
+require('vue-resource');
+Vue.http.options.root = 'http://192.168.10.10:8000/api';
+
 
 
 // window.axios = require('axios');
@@ -8,9 +11,6 @@ require('materialize-css');
 //     'X-CSRF-TOKEN': window.Laravel.csrfToken,
 //     'X-Requested-With': 'XMLHttpRequest'
 // };
-
-Vue.component('app', require('./components/App.vue'));
-Vue.component('admin-menu', require('./components/AdminMenu.vue'));
 
 require('./router');
 
