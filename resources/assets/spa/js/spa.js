@@ -21,6 +21,16 @@ require('materialize-css');
 //     'X-Requested-With': 'XMLHttpRequest'
 // };
 
+Vue.component('app', require('./components/App.vue'));
+Vue.component('admin-menu', require('./components/AdminMenu.vue'));
+
+
+const app = new Vue({
+
+    el: 'body'
+
+});
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
