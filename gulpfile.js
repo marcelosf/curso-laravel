@@ -17,7 +17,7 @@ gulp.task('webpack-dev-server', () => {
     let config = mergeWebpack(webpackConfig, webpackDevConfig);
     let inlineHot = [
         'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://192.168.10.10:8000'
+        'webpack-dev-server/client?http://192.168.10.10:8080'
     ];
     config.entry.admin = [config.entry.admin].concat(inlineHot);
     config.entry.spa = [config.entry.spa].concat(inlineHot);

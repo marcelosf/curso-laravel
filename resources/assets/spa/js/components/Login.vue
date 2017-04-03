@@ -5,7 +5,7 @@
             <div class="col s8 offset-s2 z-depth-2">
                 <h3 class="center">Code Financeiro</h3>
 
-                <form method="POST" @submit.prevent="">
+                <form method="POST" @submit.prevent="login()">
 
                     <div class="row">
                         <div class="input-field col s12">
@@ -37,7 +37,7 @@
 </template>
 
 <script type="text/javascript">
-    import {Jwt} from '../resources';
+    import {Jwt} from '../services/resources';
     export default {
 
         data(){
@@ -54,7 +54,6 @@
         methods: {
 
             login(){
-
                 Jwt.accessToken(this.user.email, this.user.password).then((response)=> {
                     console.log(response);
                 });
