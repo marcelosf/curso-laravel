@@ -15,7 +15,8 @@ Vue.http.options.root = 'http://192.168.10.10:8000/api';
 // };
 
 require('./router');
-LocalStorage.set('nome', 'Marcelo');
+
+LocalStorage.setObject('user', {name: 'Marcelo', id: '12'});
 
 // import Echo from "laravel-echo"
 
