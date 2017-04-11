@@ -29,5 +29,12 @@ Route::group(['middleware' => 'cors'], function(){
 
     })->middleware('auth:api');
 
+    Route::get('/user', function (){
+
+        $user = Auth::guard('api')->user();
+        return $user;
+
+    })->middleware('auth:api');
+
 });
 
