@@ -17,17 +17,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => 'cors'], function(){
+Route::group(['middleware' => 'cors', 'as' => 'api.'], function(){
 
-    Route::post('/access_token', 'Api\AuthController@accessToken');
-    Route::post('/refresh_token', 'Api\AuthController@refreshToken');
-    Route::post('logout', 'Api\AuthController@logout')->middleware('auth:api');
+    Route::post('/access_token', 'Api\AuthController@accessToken')->name('access_token');
+    Route::post('/refresh_token', 'Api\AuthController@refreshToken')->name('refresh_token');
 
-    Route::get('hello-world', function(Request $request){
 
-        return response()->json(['message' => 'Hello world']);
+    Route::group(['middleware' => 'auth:api'], function(){
 
-    })->middleware('auth:api');
+        Route::post('logout', 'Api\AuthController@logout')->middleware('auth:api');
+        Route::get('hello-world', function(Request $request){
+
+            return response()->json(['message' => 'Hello world']);
+
+        })->middleware('auth:api')->name('user');
+
+    });
+
+
 
     Route::get('/user', function (){
 
