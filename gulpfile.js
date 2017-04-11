@@ -6,6 +6,9 @@ const webpackConfig = require('./webpack.config');
 const webpackDevConfig = require('./webpack.dev.config');
 const mergeWebpack = require('webpack-merge');
 const env = require('gulp-env');
+const stringifyObject = require('stringify-object');
+const file = require('gulp-file');
+
 
 env({
 
@@ -23,6 +26,22 @@ console.log(process.env.API_URL);
 //
 // Elixir.webpack.mergeConfig(webpackConfig);
 // Elixir.webpack.mergeConfig(webpackDevConfig);
+
+gulp.task('spa-config', ()=>{
+
+    env({
+
+        file: '.env',
+        type: 'ini'
+
+    });
+
+    let spaConfig = require('./spa.config');
+    let string = stringifyObject(spaConfig);
+    return file('config.js', `module.exports = ${string};`, {src: true})
+        .pipe(gulp.dest('./resources/assets/spa/js'));
+
+});
 
 gulp.task('webpack-dev-server', () => {
     let config = mergeWebpack(webpackConfig, webpackDevConfig);

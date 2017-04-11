@@ -7,6 +7,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-env": "^0.4.0",
+    "gulp-file": "^0.3.0",
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-browsersync-official": "^1.0.0",
     "laravel-elixir-vue": "^0.1.8",
@@ -15,6 +16,7 @@
     "materialize-css": "^0.97.7",
     "node-sass": "^4.5.1",
     "sockjs": "^0.3.18",
+    "stringify-object": "^3.2.0",
     "vue": "^1.0.28",
     "vue-resource": "^1.2.1",
     "vue-router": "^0.7.13",
