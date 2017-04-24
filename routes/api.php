@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group(['middleware' => 'cors', 'as' => 'api.'], function(){
 
     Route::post('/access_token', 'Api\AuthController@accessToken')->name('access_token');
