@@ -18,13 +18,28 @@ export default {
 
         return Jwt.accessToken(email, password).then((response)=> {
 
-            afterLogin(response);
-
             LocalStorage.set(TOKEN, response.data.token);
+
+            afterLogin(response);
 
             return response;
 
         });
+
+    },
+
+    logout() {
+
+        let afterLogout = () => {
+
+            LocalStorage.remove(TOKEN);
+
+            LocalStorage.remove(USER);
+
+        };
+
+
+        return Jwt.logout().then(afterLogout()).catch(afterLogout());
 
     },
 

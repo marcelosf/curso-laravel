@@ -9,6 +9,12 @@ export class Jwt {
 
     }
 
+    static logout() {
+
+        return Vue.http.post('logout');
+
+    }
+
 }
 
 let User = Vue.resource('user');
