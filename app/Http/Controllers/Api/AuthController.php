@@ -78,7 +78,7 @@ class AuthController extends Controller
 
             "message" => Lang::get('auth.failed')
 
-        ], 401);
+        ], 400);
 
     }
 

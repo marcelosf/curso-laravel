@@ -7,3 +7,25 @@ Vue.http.interceptors.push((request, next) => {
     next();
 
 });
+
+
+
+Vue.http.interceptors.push((request, next) => {
+
+   next((response) => {
+
+       console.log(response.status);
+
+       if(response.status === 401) {
+
+            return Auth.refreshToken().then(() => {
+
+                return Vue.http(request);
+
+            });
+
+       }
+
+   });
+
+});

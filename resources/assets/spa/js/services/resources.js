@@ -15,6 +15,12 @@ export class Jwt {
 
     }
 
+    static refreshToken() {
+
+        return Vue.http.post('refresh_token');
+
+    }
+
 }
 
 let User = Vue.resource('user');
